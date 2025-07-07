@@ -304,6 +304,8 @@ rocsparse_status rocsparse_importer_matrixmarket::import_sparse_coo(I* row_ind, 
             read_mtx_value(ss, irow, icol, ival);
         }
 
+        ival = convertToInt<T>(ival);
+
         unsorted_row[idx] = (I)irow;
         unsorted_col[idx] = (I)icol;
         unsorted_val[idx] = ival;
