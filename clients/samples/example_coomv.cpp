@@ -181,7 +181,7 @@ int main(int argc, char* argv[])
                        / time / 1e6;
     double gflops = static_cast<double>(3 * nnz) / time / 1e6;
 
-    std::cout.precision(2);
+    std::cout.precision(15);
     std::cout.setf(std::ios::fixed);
     std::cout.setf(std::ios::left);
     std::cout << std::setw(12) << "m" << std::setw(12) << "n" << std::setw(12) << "nnz"

@@ -149,7 +149,7 @@ int main(int argc, char* argv[])
     // Print result
     HIP_CHECK(hipMemcpy(hB.data(), dB, sizeof(double) * ldb * n, hipMemcpyDeviceToHost));
 
-    std::cout.precision(2);
+    std::cout.precision(15);
     std::cout.setf(std::ios::fixed);
     std::cout.setf(std::ios::left);
     std::cout << std::endl << "### rocsparse_dgtsv ###" << std::endl;

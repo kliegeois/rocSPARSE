@@ -123,7 +123,7 @@ int main(int argc, char* argv[])
     // Matrix C (m x n) in column-major
     rocsparse_int ldc    = m;
     double        hC[15] = {
-        18.0, 23.0, 28.0, 19.0, 24.0, 29.0, 20.0, 25.0, 30.0, 21.0, 26.0, 31.0, 22.0, 27.0, 32.0};
+               18.0, 23.0, 28.0, 19.0, 24.0, 29.0, 20.0, 25.0, 30.0, 21.0, 26.0, 31.0, 22.0, 27.0, 32.0};
 
     // Scalar alpha and beta
     double alpha = 3.7;
@@ -176,7 +176,7 @@ int main(int argc, char* argv[])
     // Print result
     HIP_CHECK(hipMemcpy(hC, dC, sizeof(double) * m * n, hipMemcpyDeviceToHost));
 
-    std::cout.precision(2);
+    std::cout.precision(15);
     std::cout << "C:" << std::endl;
 
     for(int i = 0; i < m; ++i)

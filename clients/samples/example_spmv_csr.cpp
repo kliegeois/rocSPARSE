@@ -229,7 +229,7 @@ int main(int argc, char* argv[])
     HIP_CHECK(hipGetDeviceProperties(&devProp, device_id));
     std::cout << "Device: " << devProp.name << std::endl;
 
-    std::cout.precision(2);
+    std::cout.precision(15);
     std::cout.setf(std::ios::fixed);
     std::cout.setf(std::ios::left);
     std::cout << std::endl;
