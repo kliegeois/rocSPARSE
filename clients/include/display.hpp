@@ -680,7 +680,7 @@ inline void display_timing_info_main(S name, Ts... ts)
     //
     {
         std::ostringstream out_legend;
-        out_legend.precision(15);
+        out_legend.precision(7);
         out_legend.setf(std::ios::fixed);
         out_legend.setf(std::ios::left);
         if(!display_timing_info_is_stdout_disabled())
@@ -697,7 +697,7 @@ inline void display_timing_info_main(S name, Ts... ts)
     }
 
     std::ostringstream out;
-    out.precision(15);
+    out.precision(7);
     out.setf(std::ios::fixed);
     out.setf(std::ios::left);
     if(!display_timing_info_is_stdout_disabled())
