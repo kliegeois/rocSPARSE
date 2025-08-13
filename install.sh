@@ -497,7 +497,7 @@ cmake_executable=cmake
 
 case "${ID}" in
   centos|rhel)
-  cmake_executable=cmake3
+  cmake_executable=cmake
   ;;
 esac
 
