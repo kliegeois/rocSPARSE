@@ -246,7 +246,7 @@ int main(int argc, char* argv[])
     // Device synchronization
     HIP_CHECK(hipDeviceSynchronize());
 
-    std::cout.precision(15);
+    std::cout.precision(2);
     std::cout.setf(std::ios::fixed);
     std::cout.setf(std::ios::left);
     std::cout << std::endl << "### rocsparse_dcsrsv ###" << std::endl;
