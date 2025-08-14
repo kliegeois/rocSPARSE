@@ -35,4 +35,9 @@ cp -r pmc_* $pwd_path/.
 
 cd $pwd_path
 
+tar -cvzf pmc.tar.gz pmc_* log.txt log_prof.txt
+
+
+rocprof-compute profile -n csrmv_mc2depi_0 -- .$pwd_path/build/release/clients/staging/rocsparse-bench --transposeA N -f csrmv --precision s --device 0 --alpha 1 --beta 0 --iters 20 --rocalution $pwd_path/scripts/performance/matrices/mc2depi.csr
+
 python3 $pwd_path/read_python.py
