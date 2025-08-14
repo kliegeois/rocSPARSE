@@ -42,3 +42,4 @@ def read_lines_between_sequences(filepath, start_seq, end_seq):
     return lines_in_between
 
 print(read_lines_between_sequences("log.txt", "NT             525825         525825         2100225        1.0000000      0.0000000      default        ", " "))
+print(read_lines_between_sequences("log_prof.txt", "NT             525825         525825         2100225        1.0000000      0.0000000      default        ", " "))
