@@ -42,6 +42,6 @@ for i in {1..20}; do
     python3.8 /opt/rocm-7.0.0/bin/rocprof-compute profile -n csrmv_mc2depi_${i} -- ./build/release/clients/staging/rocsparse-bench --transposeA N -f csrmv --precision s --device 0 --alpha 1 --beta 0 --iters 20 --rocalution $pwd_path/scripts/performance/matrices/mc2depi.csr >> $pwd_path/log_prof.txt
 done
 
-tar -cvzf results.tar.gz pmc_* log.txt log_prof.txt
+tar -cvzf results.tar.gz workloads/* pmc_* log.txt log_prof.txt
 
 python3 $pwd_path/read_python.py
