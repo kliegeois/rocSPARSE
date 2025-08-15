@@ -3,7 +3,7 @@ pwd_path=`pwd`
 if [ ! -d "$pwd_path/build/release" ]; then
     yum install python38
     pip3.8 install -r /opt/rocm-7.0.0/libexec/rocprofiler-compute/requirements.txt
-    ./install.sh -c -a gfx9420
+    ./install.sh -c -a gfx942
 else
     cd $pwd_path/build/release
     make -j 10
