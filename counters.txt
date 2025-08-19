@@ -1,5 +1,5 @@
 pmc: SQ_WAVES SQ_WAIT_INST_LDS FETCH_SIZE WRITE_SIZE
 pmc: MemUnitBusy L2CacheHitRate TCC_HIT_sum TCC_MISS_sum
-pmc: SQ_WAVES SQ_WAIT_INST_LDS FETCH_SIZE WRITE_SIZE
+pmc: MeanOccupancyPerCU MeanOccupancyPerActiveCU GPU_UTIL
 pmc: MemUnitStalled WriteUnitStalled VALUInsts Wavefronts
 gpu: 0

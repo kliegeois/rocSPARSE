@@ -27,9 +27,12 @@ cd $pwd_path/build/release/clients/staging
 rm -rf $pwd_path/log_prof.txt
 rm -rf pmc_*
 
-#for i in {1..100}; do
-#    rocprofv2 --plugin file -o csrmv_mc2depi_${i} -i ${pwd_path}/counters.txt ./rocsparse-bench --transposeA N -f csrmv --precision s --device 0 --alpha 1 --beta 0 --iters 20 --rocalution $pwd_path/scripts/performance/matrices/mc2depi.csr >> $pwd_path/log_prof.txt
-#done
+for i in {1..10}; do
+    echo -e "start ${i}"
+    rocprofv2 --plugin file -o csrmv_mc2depi_${i} -i ${pwd_path}/counters.txt ./rocsparse-bench --transposeA N -f csrmv --precision s --device 0 --alpha 1 --beta 0 --iters 20 --rocalution $pwd_path/scripts/performance/matrices/mc2depi.csr >> $pwd_path/log_prof.txt
+    tar -cvzf results.tar.gz workloads/* pmc_* log.txt log_prof.txt
+    echo -e "run ${i} done"
+done
 
 rm -rf $pwd_path/pmc_*
 
@@ -39,6 +42,7 @@ cd $pwd_path
 
 
 for i in {1..20}; do
+    echo -e "start ${i}"
     python3.8 /opt/rocm-7.0.0/bin/rocprof-compute profile -n csrmv_mc2depi_${i} -- ./build/release/clients/staging/rocsparse-bench --transposeA N -f csrmv --precision s --device 0 --alpha 1 --beta 0 --iters 20 --rocalution $pwd_path/scripts/performance/matrices/mc2depi.csr >> $pwd_path/log_prof.txt
     tar -cvzf results.tar.gz workloads/* pmc_* log.txt log_prof.txt
     echo -e "run ${i} done"
